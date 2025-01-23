@@ -1,0 +1,93 @@
+<% layout('layouts/boilerplate') -%>
+
+    <body>
+        <!-- <form method="POST" action="/listings">
+        <h3>Create New Listing</h3>
+
+        <input type="text" name="title" placeholder="enter title"> <br> <br>
+        <textarea name="description" placeholder="enter your description"></textarea> <br><br>
+        <input type="text" name="image" placeholder="enter image URL/Link"> <br><br>
+        <input type="number" name="price" placeholder="enter price "> <br><br>
+        <input type="text" name="location" placeholder="enter location"> <br> <br>
+        <input type="text" name="country" placeholder="enter country"> <br> <br>
+        <button>Add</button>
+
+    </form> -->
+
+        <div class="row">
+            <form method="POST" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
+                <div class="col-8 offset-2">
+                    <h3>Create New Listing</h3>
+
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Enter Title</label>
+                        <input type="text" class="form-control" name="listing[title]" placeholder="Enter catchy title" required>
+                        <div class="valid-feedback">
+                            Title Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please Enter Title.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Enter Description</label>
+                        <textarea class="form-control" name="listing[description]" placeholder="Enter Description" required></textarea>
+                        <div class="valid-feedback">
+                            Description Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please Enter short description.
+                          </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload Listing Image</label>
+                        <input type="file" class="form-control" name="listing[image]" required>
+                           
+                    </div>
+
+                    <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label">Enter Your Price</label>
+                        <input type="number" class="form-control" name="listing[price]" placeholder="Ex: 13000" required>
+                        <div class="valid-feedback">
+                            Price Looks Valid!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please Enter Valid.
+                          </div>
+                    </div>
+
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label">Enter country</label>
+                        <input type="text" class="form-control" name="listing[country]" placeholder="Enter Country Name" required>
+                        <div class="valid-feedback">
+                            Country Looks Valid!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please Enter Valid County name.
+                        </div>
+                    </div>
+
+                   </div>
+
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Enter Location</label>
+                        <input type="text" class="form-control" name="listing[location]" placeholder="Enter Location" required>
+                        <div class="valid-feedback">
+                            Location Looks Valid!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please Enter Valid Location.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark mb-3 add-btn">Add Property</button>
+
+                </div>
+            </form>
+        </div>
+
+    </body>

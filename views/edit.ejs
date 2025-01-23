@@ -1,0 +1,86 @@
+<% layout('layouts/boilerplate') -%>
+<body>
+
+
+    <div class="row">
+        <form method="POST" action="/listings/<%=priviousDetails.id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+            <div class="col-8 offset-2">
+                <h3>Edit Listing</h3>
+
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">Enter Title</label>
+                    <input type="text" class="form-control" name="listing[title]" placeholder="Enter catchy title" value="<%=priviousDetails.title %>" required>
+                    <div class="valid-feedback">
+                        Title Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please Enter Title.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Enter Description</label>
+                    <textarea class="form-control" name="listing[description]" placeholder="Enter Description" required><%=priviousDetails.description.trim()%></textarea>
+                     <div class="valid-feedback">
+                            Description Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please Enter short description.
+                        </div>
+                </div>
+                
+                <div class="mb-3 ">
+                    <img src="<%= priviousDetails.image.url %>" alt="" style="height: 300px;">
+                    
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload Listing Image</label>
+                    <input type="file" class="form-control" name="listing[image]">
+                       
+                </div>
+                <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="price" class="form-label">Enter Your Price</label>
+                    <input type="number" class="form-control" name="listing[price]" placeholder="Ex: 13000" value="<%=priviousDetails.price %>" required>
+                    <div class="valid-feedback">
+                        Price Looks Valid!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please Enter Valid.
+                      </div>
+                </div>
+
+                <div class="mb-3 col-md-8">
+                    <label for="country" class="form-label">Enter country</label>
+                    <input type="text" class="form-control" name="listing[country]" placeholder="Enter Country Name" value="<%=priviousDetails.country %>" required>
+                    <div class="valid-feedback">
+                        Country Looks Valid!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please Enter Valid County name.
+                    </div>
+                </div>
+
+               </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Enter Location</label>
+                    <input type="text" class="form-control" name="listing[location]" placeholder="Enter Location" value="<%=priviousDetails.location %>" required>
+                    <div class="valid-feedback">
+                        Location Looks Valid!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please Enter Valid Location.
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-dark mb-3 edit-btn">Edit Property</button>
+
+            </div>
+        </form>
+    </div>
+
+
+</body>
